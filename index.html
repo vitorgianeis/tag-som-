@@ -340,48 +340,20 @@
         }
 
         
-        @media screen and (max-width: 768px) {
-  .banner-container {
-    /* Layout */
-    height: auto !important;
-    min-height: 40vh;
-    flex-direction: column;
-    padding: 15px;
-    
-    /* Espaçamento */
-    margin: 10px auto;
-    width: 95vw;
-    
-    /* Efeitos visuais ajustados */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    border-width: 0.5px;
-    
-    /* Otimização de performance */
-    background-attachment: scroll;
-    
-    /* Ajuste de conteúdo */
-    overflow-y: auto;
-  }
-
-  .banner-content {
-    padding: 15px !important;
-    width: 100% !important;
-  }
-
-  .banner-title {
-    font-size: 1.8rem !important;
-    margin-bottom: 15px !important;
-  }
-
-  .features {
-    max-width: 100% !important;
-  }
-
-  .feature {
-    padding: 10px !important;
-    margin-bottom: 15px !important;
-  }
-}
+        .banner-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(45deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
         
         .banner-content {
             position: relative;
@@ -448,6 +420,7 @@
         }
         
         .form-box {
+            flex: 1;
             background: rgba(20, 20, 20, 0.9);
             border: 1px solid rgba(255, 107, 0, 0.3);
             border-radius: 15px;
@@ -1400,23 +1373,7 @@ window.addEventListener('resize', adjustMobileView);
         </header>
         
         <!-- Conteúdo Principal -->
-        <div class="main-container">
-            <!-- Banner/Conteúdo -->
-            <div class="banner-container">
-                <div class="banner-content">
-                    <h2 class="banner-title">Sistema de Gerenciamento</h2>
-                    
-                        
-                        <div class="feature">
-                            <i class="fas fa-calendar-alt"></i>
-                            <div class="feature-text">
-                                <h3>Gestão de Eventos</h3>
-                                <p>Organize todos os detalhes dos seus eventos</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       
             
             <!-- Formulário de Login -->
             <div class="form-container">
