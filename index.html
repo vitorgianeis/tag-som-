@@ -340,20 +340,48 @@
         }
 
         
-        .banner-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            height: 600px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            background: linear-gradient(45deg, #1a1a1a 0%, #0d0d0d 100%);
-            border: 1px solid rgba(255, 107, 0, 0.2);
-        }
+        @media screen and (max-width: 768px) {
+  .banner-container {
+    /* Layout */
+    height: auto !important;
+    min-height: 40vh;
+    flex-direction: column;
+    padding: 15px;
+    
+    /* Espaçamento */
+    margin: 10px auto;
+    width: 95vw;
+    
+    /* Efeitos visuais ajustados */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-width: 0.5px;
+    
+    /* Otimização de performance */
+    background-attachment: scroll;
+    
+    /* Ajuste de conteúdo */
+    overflow-y: auto;
+  }
+
+  .banner-content {
+    padding: 15px !important;
+    width: 100% !important;
+  }
+
+  .banner-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .features {
+    max-width: 100% !important;
+  }
+
+  .feature {
+    padding: 10px !important;
+    margin-bottom: 15px !important;
+  }
+}
         
         .banner-content {
             position: relative;
