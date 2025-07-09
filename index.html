@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tag Som e Luz - Sistema Integrado</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -1235,6 +1236,71 @@
                 min-height: 60px;
                 padding: 5px 2px;
             }
+
+            /* ========== RESPONSIVO ========== */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .banner-container, .form-container {
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
+  
+  .sidebar {
+    width: 70px;
+  }
+  
+  .sidebar-header, .nav-link span {
+    display: none;
+  }
+  
+  .main-content {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .user-info {
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .calendar-day {
+    min-height: 60px;
+    padding: 5px 2px;
+    font-size: 0.7rem;
+  }
+  
+  .event-item {
+    font-size: 0.6rem;
+    padding: 3px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .banner-title {
+    font-size: 1.5rem;
+  }
+  
+  .feature {
+    padding: 10px;
+  }
+  
+  .form-box {
+    padding: 15px;
+  }
+}
         }
     </style>
 </head>
