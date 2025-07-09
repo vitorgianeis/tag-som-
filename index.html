@@ -1238,6 +1238,33 @@
                 padding: 5px 2px;
             }
 
+            /* ===== CORREÇÕES IMEDIATAS PARA CELULAR ===== */
+@media screen and (max-width: 768px) {
+  body {
+    zoom: 1 !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .app-container {
+    min-width: 100vw !important;
+    transform-origin: top left !important;
+  }
+
+  /* Corrige textos vazando */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ajuste forçado para tabelas */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
             /* ========== RESPONSIVO ========== */
 @media (max-width: 900px) {
   .main-container {
@@ -1303,9 +1330,30 @@
   }
 }
         }
+
+        
     </style>
 </head>
 <body>
+    <script>
+// Força redimensionamento em dispositivos móveis
+function adjustMobileView() {
+  if (window.innerWidth <= 768) {
+    const viewport = document.querySelector('meta[name="viewport"]');
+    viewport.setAttribute('content', 'width=device-width, initial-scale=0.8, maximum-scale=1.0');
+    
+    // Reset de zoom
+    document.body.style.zoom = "1";
+    setTimeout(() => {
+      document.body.style.zoom = "";
+    }, 100);
+  }
+}
+
+// Executa ao carregar e redimensionar
+window.addEventListener('load', adjustMobileView);
+window.addEventListener('resize', adjustMobileView);
+</script>
     <!-- Página de Login -->
     <div class="login-page" id="loginPage">
         <!-- Efeitos de fundo -->
