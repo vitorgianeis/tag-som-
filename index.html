@@ -1363,7 +1363,6 @@ window.addEventListener('resize', adjustMobileView);
         <div class="background-effects">
             <div class="light-beam"></div>
             <div class="light-beam"></div>
-            <div class="light-beam"></div>
         </div>
         
         <!-- Cabeçalho -->
@@ -1419,7 +1418,7 @@ window.addEventListener('resize', adjustMobileView);
                 <li class="nav-item">
                     <a href="#" class="nav-link active" data-page="dashboard">
                         <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
+                        <span>TAG</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -1431,7 +1430,7 @@ window.addEventListener('resize', adjustMobileView);
                 <li class="nav-item">
                     <a href="#" class="nav-link" data-page="eventos">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>Eventos</span>
+                        <span> Gerenciamento de Eventos</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -1459,10 +1458,10 @@ window.addEventListener('resize', adjustMobileView);
         <div class="main-content">
             <!-- Topbar -->
             <div class="topbar">
-                <div class="page-title" id="currentPageTitle">Dashboard</div>
+                <div class="page-title" id="currentPageTitle">TAG SOM E LUS</div>
                 <div class="user-info">
-                    <div class="user-avatar">AD</div>
-                    <div class="user-name">Admin</div>
+                    <div class="user-avatar">TAG</div>
+                    <div class="user-name">gianeis</div>
                     <button class="logout-btn" id="logoutBtn">
                         <i class="fas fa-sign-out-alt"></i> Sair
                     </button>
@@ -1494,47 +1493,12 @@ window.addEventListener('resize', adjustMobileView);
                     </div>
                 </div>
                 
-                <div class="equipamentos-container">
-                    <h1><i class="fas fa-boxes"></i> Equipamentos Recentes</h1>
-                    
-                    <div class="filtros">
-                        <select id="filtro-categoria">
-                            <option value="">Todas Categorias</option>
-                            <option value="estrutura">Estruturas</option>
-                            <option value="iluminacao">Iluminação</option>
-                            <option value="som">Sonorização</option>
-                            <option value="controle">Controles</option>
-                            <option value="acessorio">Acessórios</option>
-                        </select>
-                        
-                        <select id="filtro-local">
-                            <option value="">Todos Locais</option>
-                            <option value="barracao">Barracão</option>
-                            <option value="silene">Silene</option>
-                            <option value="san-carlo">San Carlo</option>
-                        </select>
-                        
-                        <input type="text" id="busca" placeholder="Pesquisar equipamento...">
-                    </div>
-                    
-                    <table id="tabela-equipamentos">
-                        <thead>
-                            <tr>
-                                <th>Material</th>
-                                <th>Quantidade</th>
-                                <th>Local</th>
-                                <th>Observações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Dados serão inseridos via JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
+                
             </div>
             
             <!-- Página de Equipamentos -->
             <div class="page" id="equipamentos">
+                
                 <div class="equipamentos-container">
                     <h1><i class="fas fa-boxes"></i> Controle de Equipamentos</h1>
                     
@@ -1564,6 +1528,43 @@ window.addEventListener('resize', adjustMobileView);
                                 <th>Material</th>
                                 <th>Quantidade</th>
                                 <th>Local</th>
+                                <th>Observações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dados serão inseridos via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="equipamentos-container">
+                    <h1><i class="fas fa-boxes"></i> Equipamentos Recentes</h1>
+                    
+                    <div class="filtros">
+                        <select id="filtro-categoria">
+                            <option value="">Todas Categorias</option>
+                            <option value="estrutura">Estruturas</option>
+                            <option value="iluminacao">Iluminação</option>
+                            <option value="som">Sonorização</option>
+                            <option value="som">Painel de LED</option>
+                            <option value="controle">Controles</option>
+                            <option value="acessorio">Acessórios</option>
+                        </select>
+                        
+                        <select id="filtro-local">
+                            <option value="">Todos Locais</option>
+                            <option value="barracao">Barracão</option>
+                            <option value="silene">Silene</option>
+                            <option value="san-carlo">San Carlo</option>
+                        </select>
+                        
+                        <input type="text" id="busca" placeholder="Pesquisar equipamento...">
+                    </div>
+                    
+                    <table id="tabela-equipamentos">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Quantidade</th>
                                 <th>Observações</th>
                             </tr>
                         </thead>
