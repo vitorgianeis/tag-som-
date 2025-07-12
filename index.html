@@ -1330,6 +1330,41 @@
     padding: 15px;
   }
 }
+/* Padronização das tabelas de equipamentos */
+#tabela-equipamentos, 
+#tabela-equipamentos2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#tabela-equipamentos th, 
+#tabela-equipamentos2 th,
+#tabela-equipamentos td, 
+#tabela-equipamentos2 td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#tabela-equipamentos th, 
+#tabela-equipamentos2 th {
+    background-color: var(--primary);
+    color: white;
+}
+
+#tabela-equipamentos tr, 
+#tabela-equipamentos2 tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#tabela-equipamentos tr:hover, 
+#tabela-equipamentos2 tr:hover {
+    background-color: rgba(255, 107, 0, 0.05);
+}
         }
 
         
@@ -1563,6 +1598,7 @@ window.addEventListener('resize', adjustMobileView);
                             <tr>
                                 <th>Material</th>
                                 <th>Quantidade</th>
+                                <th>Local</th>
                                 <th>Observações</th>
                             </tr>
                         </thead>
@@ -2056,36 +2092,36 @@ window.addEventListener('resize', adjustMobileView);
         const dayNames = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
         // Função para carregar a tabela
-        function carregarTabela(tableId, filtroCategoria = "", filtroLocal = "", busca = "") {
-            const tbody = document.querySelector(`#${tableId} tbody`);
-            tbody.innerHTML = "";
-            
-            const filtrados = equipamentos.filter(item => {
-                const categoriaMatch = !filtroCategoria || item.categoria === filtroCategoria;
-                const localMatch = !filtroLocal || item.local.includes(filtroLocal);
-                const buscaMatch = !busca || item.material.toLowerCase().includes(busca.toLowerCase());
-                
-                return categoriaMatch && localMatch && buscaMatch;
-            });
-            
-            if (filtrados.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">Nenhum equipamento encontrado</td></tr>`;
-                return;
-            }
-            
-            filtrados.forEach(item => {
-                const classeLocal = item.local === "barracão" ? "status-barracao" : "status-outro";
-                
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${item.material}</td>
-                        <td>${item.quantidade}</td>
-                        <td><span class="${classeLocal}">${item.local}</span></td>
-                        <td>${item.obs || "-"}</td>
-                    </tr>
-                `;
-            });
-        }
+       function carregarTabela(tableId, filtroCategoria = "", filtroLocal = "", busca = "") {
+    const tbody = document.querySelector(`#${tableId} tbody`);
+    tbody.innerHTML = "";
+    
+    const filtrados = equipamentos.filter(item => {
+        const categoriaMatch = !filtroCategoria || item.categoria === filtroCategoria;
+        const localMatch = !filtroLocal || item.local.includes(filtroLocal);
+        const buscaMatch = !busca || item.material.toLowerCase().includes(busca.toLowerCase());
+        
+        return categoriaMatch && localMatch && buscaMatch;
+    });
+    
+    if (filtrados.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">Nenhum equipamento encontrado</td></tr>`;
+        return;
+    }
+    
+    filtrados.forEach(item => {
+        const classeLocal = item.local === "barracão" ? "status-barracao" : "status-outro";
+        
+        tbody.innerHTML += `
+            <tr>
+                <td>${item.material}</td>
+                <td>${item.quantidade || "-"}</td>
+                <td><span class="${classeLocal}">${item.local || "-"}</span></td>
+                <td>${item.obs || "-"}</td>
+            </tr>
+        `;
+    });
+}
         
         // Login
         document.getElementById('login-form').addEventListener('submit', function(e) {
