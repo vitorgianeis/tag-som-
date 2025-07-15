@@ -2667,11 +2667,10 @@ window.addEventListener('resize', adjustMobileView);
                                     <h4>${item.nome} (x${item.quantidade})</h4>
                                     <div style="display: flex; gap: 15px; margin-top: 5px;">
                                         <label><input type="checkbox"> Carregado</label>
-                                        <label><input type="checkbox"> Montado</label>
-                                        <label><input type="checkbox"> Testado</label>
+                                        <label><input type="checkbox"> Caminhão</label>                                       
                                     </div>
                                 </div>
-                                <span class="status status-pendente">PENDENTE</span>
+                               
                             </div>
                         `;
                     });
@@ -2680,6 +2679,8 @@ window.addEventListener('resize', adjustMobileView);
                 }
             });
         }
+
+        
 
         function salvarChecklist() {
             const eventoId = parseInt(document.getElementById('selecionar-evento').value);
@@ -2692,9 +2693,7 @@ window.addEventListener('resize', adjustMobileView);
                     localStorage.setItem('eventosTag', JSON.stringify(eventos));
                     alert('Checklist salvo com sucesso!');
                 }
-            } else {
-                alert('Preencha o nome do responsável!');
-            }
+            } 
         }
 
         function carregarListaEventos() {
