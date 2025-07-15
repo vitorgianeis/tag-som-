@@ -1041,9 +1041,14 @@
             padding: 30px;
             width: 90%;
             max-width: 600px;
+            max-height: 70vh; /* Adiciona altura máxima */
+             overflow-y: auto; /* Adiciona scroll se necessário */
             border: 1px solid var(--primary);
             position: relative;
-        }
+         /* Nova propriedade para controlar a altura */
+    height: auto; /* Altura automática baseada no conteúdo */
+    min-height: 200px; /* Altura mínima para evitar que fique muito pequeno */
+}
         
         .close-modal {
             position: absolute;
@@ -2282,7 +2287,7 @@ window.addEventListener('resize', adjustMobileView);
                         <p>R$ ${equip.diaria.toFixed(2)} /dia</p>
                         <div class="checkbox-container">
                             <input type="checkbox" id="equip-${equip.id}" value="${equip.id}">
-                            <label for="equip-${equip.id}">Selecionar</label>
+                            <label for="equip-${equip.id}">          </label>
                         </div>
                         <div class="equipment-inputs" id="inputs-equip-${equip.id}" style="display: none; margin-top: 10px;">
                             <div>
@@ -2729,7 +2734,7 @@ window.addEventListener('resize', adjustMobileView);
                             <h3>${evento.cliente}</h3>
                             <p><strong>Data:</strong> ${formatarData(evento.data)}</p>
                             <p><strong>Local:</strong> ${evento.local}</p>
-                            <p><strong>Equipamentos:</strong> ${concluidos}/${total} concluídos</p>
+                            <p><strong>Equipamentos:</strong> ${concluidos}/${total} </p>
                             ${evento.responsavel ? `<p><strong>Responsável:</strong> ${evento.responsavel}</p>` : ''}
                         </div>
                         <span class="status ${statusClass}">${statusText}</span>
@@ -2927,10 +2932,7 @@ window.addEventListener('resize', adjustMobileView);
                 return;
             }
             
-            // Solicita confirmação do usuário
-            if (!confirm(`Tem certeza que deseja cancelar o evento "${selectedEvent.cliente}"?`)) {
-                return;
-            }
+            
 
             try {
                 // Encontra o índice do evento no array
