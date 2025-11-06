@@ -621,24 +621,23 @@
             transform: translateY(-3px);
         }
         
-        /* Equipamentos Page */
-        .equipamentos-container {
+       /* Equipamentos Page - DEIXAR IGUAL A EVENTOS */
+.equipamentos-container {
     background: rgba(30, 30, 30, 0.7);
     border-radius: 12px;
-    padding: 20px 15px; /* Reduzi o padding para mobile */
+    padding: 25px; /* Mudei para igual ao eventos-container */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 107, 0, 0.2);
+    margin-bottom: 30px; /* Adicionei esta linha para ficar igual */
     width: 100%;
-    box-sizing: border-box; /* Importante para mobile */
-    margin: 0 auto;
-    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+    box-sizing: border-box;
 }
 
 .equipamentos-container h1 {
-    font-size: clamp(1.2rem, 4vw, 1.8rem); /* Tamanho responsivo */
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     margin-bottom: 15px;
     text-align: left;
-    padding: 0 5px; /* Pequeno padding para não colar nas bordas */
+    /* Removi o padding: 0 5px para não interferir */
 }
         
         /* Filtros */
