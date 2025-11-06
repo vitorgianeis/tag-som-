@@ -296,7 +296,7 @@
         
         .logo-header {
             text-align: center;
-            padding: 25px 0;
+            padding: 10px 0;
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(10px);
             position: absolute;
@@ -410,18 +410,7 @@
             margin-left: 40px;
         }
         
-        .form-box {
-            flex: 1;
-            background: rgba(20, 20, 20, 0.9);
-            border: 1px solid rgba(255, 107, 0, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+        
         
         .form-box:hover {
             transform: translateY(-5px);
@@ -429,18 +418,9 @@
         }
         
         .form-logo {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #FF6B00, #FF9E00);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2.5rem;
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
-        }
+    text-align: center;
+    margin-bottom: 30px;
+}
         
         .form-logo i {
             transform: rotate(-10deg);
